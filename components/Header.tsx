@@ -1,19 +1,27 @@
+import Image from "next/image";
 import Link from "next/link";
 import { business } from "@/lib/site-data";
 
 const links = [
   { href: "/", label: "Home" },
   { href: "/menu", label: "Menu" },
-  { href: "/#story", label: "Our Story" },
+  { href: "/#about", label: "About" },
   { href: "/#location", label: "Location" },
 ];
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-[var(--surface-line)] bg-surface/90 backdrop-blur">
-      <div className="section flex items-center justify-between py-5">
-        <Link href="/" className="font-[family-name:var(--font-body)] text-base font-bold uppercase tracking-[0.25em] text-ink sm:text-lg">
-          Thai BBQ
+    <header className="sticky top-0 z-50 border-b border-[var(--surface-line)] bg-surface/95 backdrop-blur">
+      <div className="section flex items-center justify-between py-3">
+        <Link href="/" className="flex items-center gap-2">
+          <Image
+            src="/images/real/logo.png"
+            alt="Thai Original BBQ & Restaurant"
+            width={98}
+            height={76}
+            className="h-14 w-auto"
+            priority
+          />
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
@@ -21,7 +29,7 @@ export default function Header() {
             <Link
               key={l.href}
               href={l.href}
-              className="text-xs font-medium uppercase tracking-[0.15em] text-ink-soft transition-colors hover:text-ink"
+              className="text-xs font-semibold uppercase tracking-[0.15em] text-ink transition-colors hover:text-green"
             >
               {l.label}
             </Link>

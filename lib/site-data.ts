@@ -620,7 +620,7 @@ export const fanFavorites: FanFavorite[] = [
     description:
       "Half chicken marinated and hand-grilled over charcoal, finished with a honey glaze — the dish the restaurant is named for.",
     tag: "Signature",
-    image: "/images/bbq-chicken-plate.jpg",
+    image: "/images/real/bbq-chicken-plate.png",
   },
   {
     name: "Phad Thai",

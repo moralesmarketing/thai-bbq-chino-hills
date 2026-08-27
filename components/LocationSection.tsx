@@ -2,8 +2,8 @@ import { business } from "@/lib/site-data";
 
 export default function LocationSection() {
   return (
-    <section id="location" className="py-24">
-      <div className="page-header !py-0 !pb-16">
+    <section id="location" className="bg-surface-cream py-24">
+      <div className="page-header !bg-transparent !py-0 !pb-16">
         <span className="eyebrow">Visit Us</span>
         <h2 className="mt-3 text-3xl sm:text-4xl">Find Us</h2>
         <div className="divider mt-6" />
@@ -29,7 +29,7 @@ export default function LocationSection() {
               <br />
               {business.address.line2}
             </p>
-            <a href={business.phoneHref} className="block font-semibold text-ink hover:text-ember">
+            <a href={business.phoneHref} className="block font-semibold text-ink hover:text-green">
               {business.phone}
             </a>
             <p>Free parking in the shopping center lot.</p>
@@ -39,13 +39,13 @@ export default function LocationSection() {
             <a href={business.mapsUrl} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
               Get Directions
             </a>
-            <a href={business.phoneHref} className="btn btn-ghost">
+            <a href={business.phoneHref} className="btn btn-outline">
               Call to Order
             </a>
           </div>
         </div>
 
-        <div className="overflow-hidden rounded-sm border border-[var(--surface-line)]">
+        <div className="overflow-hidden rounded-md border border-[var(--surface-line)]">
           <iframe
             src={business.mapEmbedSrc}
             width="100%"

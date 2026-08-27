@@ -8,9 +8,9 @@ export const metadata: Metadata = {
 };
 
 const tagClass: Record<string, string> = {
-  Popular: "badge-ember",
+  Popular: "badge-green",
   Signature: "badge-gold",
-  Vegetarian: "badge-green",
+  Vegetarian: "badge-sage",
 };
 
 export default function MenuPage() {
@@ -22,7 +22,7 @@ export default function MenuPage() {
             <a
               key={cat.id}
               href={`#${cat.id}`}
-              className="shrink-0 rounded-full border border-[var(--surface-line)] px-4 py-1.5 text-xs font-medium uppercase tracking-[0.08em] text-ink-soft transition-colors hover:border-ember hover:text-ink"
+              className="shrink-0 rounded-full border border-[var(--surface-line)] px-4 py-1.5 text-xs font-medium uppercase tracking-[0.08em] text-ink-soft transition-colors hover:border-green hover:text-ink"
             >
               {cat.title}
             </a>
@@ -42,7 +42,7 @@ export default function MenuPage() {
       </div>
 
       <div className="section pb-24">
-        <div className="rounded-sm border border-[var(--surface-line)] bg-surface-raised p-6 sm:p-10 md:p-14">
+        <div className="rounded-md border border-[var(--surface-line)] bg-surface p-6 shadow-sm sm:p-10 md:p-14">
           <div className="grid gap-x-12 gap-y-16 md:grid-cols-2">
             {menu.map((cat) => (
               <section key={cat.id} id={cat.id} className="scroll-mt-40">

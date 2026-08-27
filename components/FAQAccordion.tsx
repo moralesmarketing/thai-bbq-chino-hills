@@ -7,13 +7,13 @@ export default function FAQAccordion() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section className="section py-24">
-      <div className="max-w-xl">
+    <section className="section bg-surface py-24">
+      <div className="mx-auto max-w-xl text-center">
         <span className="eyebrow">FAQ</span>
         <h2 className="mt-3 text-3xl sm:text-4xl">Good to Know</h2>
       </div>
 
-      <div className="mt-8 divide-y divide-[var(--surface-line)] border-y border-[var(--surface-line)]">
+      <div className="mx-auto mt-10 max-w-2xl divide-y divide-[var(--surface-line)] border-y border-[var(--surface-line)]">
         {faqs.map((faq, i) => {
           const isOpen = open === i;
           return (
@@ -25,7 +25,7 @@ export default function FAQAccordion() {
               >
                 <span className="font-medium text-ink">{faq.question}</span>
                 <span
-                  className={`shrink-0 text-xl text-ember transition-transform ${isOpen ? "rotate-45" : ""}`}
+                  className={`shrink-0 text-xl text-green transition-transform ${isOpen ? "rotate-45" : ""}`}
                 >
                   +
                 </span>

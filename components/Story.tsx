@@ -1,24 +1,46 @@
+const features = [
+  {
+    title: "Diverse Thai Menu",
+    description: "Thirteen menu sections — curries, noodles, soups, and more.",
+  },
+  {
+    title: "Charcoal-Grilled Specialties",
+    description: "BBQ chicken, beef satay, and spare ribs grilled to order.",
+  },
+  {
+    title: "Friendly Family Service",
+    description: "Family-owned and operated since 1998.",
+  },
+  {
+    title: "Fast, Casual Dining",
+    description: "Quick lunch specials, Monday through Friday.",
+  },
+];
+
 export default function Story() {
   return (
-    <section id="story" className="relative overflow-hidden py-24">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_100%,rgba(217,88,31,0.09),transparent_60%)]" />
-      <div className="section relative max-w-2xl text-center mx-auto">
-        <span className="eyebrow">Our Story</span>
-        <h2 className="mt-3 text-3xl sm:text-4xl">
-          Twenty-Six Years at This Location
-        </h2>
-        <div className="divider mt-6" />
+    <section className="bg-surface-cream py-20">
+      <div className="section">
+        <div className="mx-auto max-w-xl text-center">
+          <span className="eyebrow">What We Offer</span>
+          <h2 className="mt-3 text-3xl sm:text-4xl">
+            Why Chino Hills Chooses Us
+          </h2>
+        </div>
 
-        <blockquote className="mt-10 font-[family-name:var(--font-display)] text-2xl italic leading-relaxed text-ink sm:text-3xl">
-          &ldquo;The owners are still as pleasant, hospitable, and wonderful
-          as always, and the food has never skipped a beat.&rdquo;
-        </blockquote>
-
-        <p className="mx-auto mt-8 max-w-md text-ink-soft">
-          Thai Original BBQ has been family-owned and operated in Chino
-          Hills since 1998, known for great service and family-style
-          dining alongside its charcoal-grilled BBQ specialties.
-        </p>
+        <div className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+          {features.map((f) => (
+            <div key={f.title} className="text-center">
+              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-green text-ink-on-dark">
+                <span className="font-[family-name:var(--font-display)] text-xl">
+                  {f.title.charAt(0)}
+                </span>
+              </div>
+              <h3 className="mt-5 text-base font-semibold text-ink">{f.title}</h3>
+              <p className="mt-2 text-sm text-ink-soft">{f.description}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

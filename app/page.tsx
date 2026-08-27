@@ -12,9 +12,9 @@ export default function Home() {
     <>
       <Hero />
       <TheGrill />
+      <Story />
       <LunchSpecials />
       <FanFavorites />
-      <Story />
       <Testimonials />
       <LocationSection />
       <FAQAccordion />

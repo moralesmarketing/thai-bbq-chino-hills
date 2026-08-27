@@ -2,8 +2,8 @@ import { testimonials, business } from "@/lib/site-data";
 
 export default function Testimonials() {
   return (
-    <section className="bg-surface-raised py-24">
-      <div className="page-header !py-0 !pb-16">
+    <section className="bg-surface py-24">
+      <div className="page-header !bg-transparent !py-0 !pb-16">
         <span className="eyebrow">Reviews</span>
         <h2 className="mt-3 text-3xl sm:text-4xl">
           {business.rating.yelp.count}+ Reviews on Yelp
@@ -15,9 +15,10 @@ export default function Testimonials() {
         {testimonials.map((t) => (
           <figure
             key={t.author}
-            className="flex flex-col rounded-sm border border-[var(--surface-line)] bg-surface p-6"
+            className="flex flex-col rounded-md border border-[var(--surface-line)] bg-surface-raised p-6"
           >
-            <blockquote className="flex-1 text-sm leading-relaxed text-ink-soft">
+            <span className="stars text-sm">★★★★★</span>
+            <blockquote className="mt-3 flex-1 text-sm leading-relaxed text-ink-soft">
               &ldquo;{t.quote}&rdquo;
             </blockquote>
             <figcaption className="mt-5 flex items-center justify-between">

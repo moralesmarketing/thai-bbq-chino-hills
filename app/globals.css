@@ -1,37 +1,45 @@
 @import "tailwindcss";
 
 :root {
-  --surface: #150f0b;
-  --surface-raised: #201811;
-  --surface-line: rgba(245, 238, 228, 0.1);
+  --surface: #ffffff;
+  --surface-cream: #fdf1d6;
+  --surface-raised: #fffaf0;
+  --surface-dark: #1a1a1a;
+  --surface-line: rgba(31, 36, 32, 0.1);
 
-  --ink: #f3ece1;
-  --ink-soft: #c2b6a5;
-  --ink-faint: #8a7c6c;
+  --ink: #21261f;
+  --ink-soft: #5b6b60;
+  --ink-faint: #8b978e;
+  --ink-on-dark: #f5f1e6;
 
-  --ember: #d9581f;
-  --ember-dark: #b8460f;
-  --ember-soft: rgba(217, 88, 31, 0.15);
-  --gold: #c9a227;
-  --gold-soft: rgba(201, 162, 39, 0.15);
-  --green: #74a35d;
-  --green-soft: rgba(116, 163, 93, 0.15);
+  --green: #3e5d4b;
+  --green-dark: #2c4636;
+  --green-soft: rgba(62, 93, 75, 0.1);
+  --gold: #dfc38e;
+  --gold-dark: #c9a86a;
+  --gold-soft: rgba(223, 195, 142, 0.3);
+  --sage: #74a35d;
+  --sage-soft: rgba(116, 163, 93, 0.14);
 }
 
 @theme inline {
   --color-surface: var(--surface);
+  --color-surface-cream: var(--surface-cream);
   --color-surface-raised: var(--surface-raised);
+  --color-surface-dark: var(--surface-dark);
   --color-surface-line: var(--surface-line);
   --color-ink: var(--ink);
   --color-ink-soft: var(--ink-soft);
   --color-ink-faint: var(--ink-faint);
-  --color-ember: var(--ember);
-  --color-ember-dark: var(--ember-dark);
-  --color-ember-soft: var(--ember-soft);
-  --color-gold: var(--gold);
-  --color-gold-soft: var(--gold-soft);
+  --color-ink-on-dark: var(--ink-on-dark);
   --color-green: var(--green);
+  --color-green-dark: var(--green-dark);
   --color-green-soft: var(--green-soft);
+  --color-gold: var(--gold);
+  --color-gold-dark: var(--gold-dark);
+  --color-gold-soft: var(--gold-soft);
+  --color-sage: var(--sage);
+  --color-sage-soft: var(--sage-soft);
   --font-display: var(--font-display);
   --font-body: var(--font-body);
 }
@@ -44,19 +52,20 @@ html {
 @layer base {
   body {
     background: var(--surface);
-    color: var(--ink);
+    color: var(--ink-soft);
     font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
   }
 
   h1, h2, h3, h4 {
-    font-family: var(--font-display), ui-serif, Georgia, serif;
+    font-family: var(--font-display), ui-sans-serif, sans-serif;
     font-weight: 600;
+    color: var(--ink);
     text-wrap: balance;
   }
 }
 
 ::selection {
-  background: var(--ember);
+  background: var(--green);
   color: white;
 }
 
@@ -64,44 +73,52 @@ html {
   display: inline-flex;
   align-items: center;
   gap: 0.4em;
-  border-radius: 2px;
-  padding: 0.9em 1.8em;
+  border-radius: 4px;
+  padding: 0.9em 1.9em;
   font-weight: 600;
   font-size: 0.78rem;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+  font-family: var(--font-display), sans-serif;
   transition: transform 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
   white-space: nowrap;
 }
 .btn:active { transform: scale(0.97); }
 
 .btn-primary {
-  background: var(--ember);
-  color: var(--ink);
+  background: var(--gold);
+  color: var(--green-dark);
 }
-.btn-primary:hover { background: var(--ember-dark); }
+.btn-primary:hover { background: var(--gold-dark); }
 
 .btn-ghost {
   background: transparent;
-  color: var(--ink);
-  border: 1px solid var(--surface-line);
+  color: var(--ink-on-dark);
+  border: 1px solid rgba(245, 241, 230, 0.4);
 }
-.btn-ghost:hover { border-color: var(--ink); }
+.btn-ghost:hover { border-color: var(--ink-on-dark); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--green);
+  border: 1px solid var(--green);
+}
+.btn-outline:hover { background: var(--green); color: white; }
 
 .eyebrow {
-  font-family: var(--font-body), sans-serif;
-  letter-spacing: 0.22em;
+  font-family: var(--font-display), sans-serif;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--ember);
+  color: var(--gold-dark);
   font-size: 0.75rem;
   font-weight: 600;
 }
 
 .divider {
-  height: 1px;
-  width: 4rem;
+  height: 2px;
+  width: 3.5rem;
   margin-inline: auto;
-  background: linear-gradient(to right, transparent, var(--gold), transparent);
+  background: var(--gold);
 }
 
 .badge {
@@ -110,13 +127,13 @@ html {
   border-radius: 9999px;
   padding: 0.2em 0.75em;
   font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
+  font-weight: 700;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
-.badge-ember { background: var(--ember-soft); color: #e97744; }
-.badge-gold { background: var(--gold-soft); color: var(--gold); }
+.badge-gold { background: var(--gold-soft); color: var(--gold-dark); }
 .badge-green { background: var(--green-soft); color: var(--green); }
+.badge-sage { background: var(--sage-soft); color: var(--sage); }
 
 .section {
   max-width: 1120px;
@@ -133,11 +150,10 @@ html {
   padding-block: 5rem 4rem;
   text-align: center;
   overflow: hidden;
+  background: var(--surface-cream);
 }
-.page-header::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 50% 0%, rgba(217, 88, 31, 0.14), transparent 60%);
-  pointer-events: none;
+
+.stars {
+  color: var(--gold-dark);
+  letter-spacing: 0.05em;
 }
